@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment defaultVersion="1536" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PKn-VF-omf"/>
+                        <viewControllerLayoutGuide type="bottom" id="rhk-5W-q3O"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OHu-IX-xK3">
+                                <rect key="frame" x="518" y="793" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap outside to close" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOR-Yc-P6p">
+                                <rect key="frame" x="287" y="795" width="195" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="val-Hc-hrp">
+                                <rect key="frame" x="302" y="659" width="164" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Default Animation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showDefaultAnimations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="u5F-aR-ner"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hdE-Nk-K97">
+                                <rect key="frame" x="536" y="659" width="164" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Custom Animation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showCustomAnimations:" destination="BYZ-38-t0r" eventType="touchUpInside" id="N51-y2-d5w"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="56y-i4-O3i">
+                                <rect key="frame" x="68" y="659" width="164" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="No Animation">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="showNoAnimation:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Cn0-2f-gl4"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="OHu-IX-xK3" firstAttribute="leading" secondItem="bOR-Yc-P6p" secondAttribute="trailing" constant="36" id="57n-Pe-wFe"/>
+                            <constraint firstAttribute="centerX" secondItem="val-Hc-hrp" secondAttribute="centerX" id="7Er-Sj-oGP"/>
+                            <constraint firstItem="val-Hc-hrp" firstAttribute="centerY" secondItem="56y-i4-O3i" secondAttribute="centerY" id="JZt-2O-MsS"/>
+                            <constraint firstItem="bOR-Yc-P6p" firstAttribute="top" secondItem="val-Hc-hrp" secondAttribute="bottom" constant="100" id="MT8-AC-WoD"/>
+                            <constraint firstItem="val-Hc-hrp" firstAttribute="centerY" secondItem="hdE-Nk-K97" secondAttribute="centerY" id="O22-yK-7ls"/>
+                            <constraint firstItem="val-Hc-hrp" firstAttribute="leading" secondItem="56y-i4-O3i" secondAttribute="trailing" constant="70" id="QIp-wd-jzJ"/>
+                            <constraint firstItem="val-Hc-hrp" firstAttribute="width" secondItem="56y-i4-O3i" secondAttribute="width" id="VEu-0C-NTG"/>
+                            <constraint firstAttribute="centerX" secondItem="bOR-Yc-P6p" secondAttribute="centerX" id="c5y-Xl-A02"/>
+                            <constraint firstItem="hdE-Nk-K97" firstAttribute="leading" secondItem="val-Hc-hrp" secondAttribute="trailing" constant="70" id="jWV-S6-dDW"/>
+                            <constraint firstItem="rhk-5W-q3O" firstAttribute="top" secondItem="OHu-IX-xK3" secondAttribute="bottom" constant="200" id="nOD-m6-UiL"/>
+                            <constraint firstItem="bOR-Yc-P6p" firstAttribute="centerY" secondItem="OHu-IX-xK3" secondAttribute="centerY" id="s17-Gw-Ci7"/>
+                            <constraint firstItem="val-Hc-hrp" firstAttribute="width" secondItem="hdE-Nk-K97" secondAttribute="width" id="x0J-5Z-jdD"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="tapOutsideToCloseSwitch" destination="OHu-IX-xK3" id="KSf-tT-9bv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-30" y="211"/>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination"/>
+    </simulatedMetricsContainer>
+</document>
