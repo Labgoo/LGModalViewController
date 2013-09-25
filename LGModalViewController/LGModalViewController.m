@@ -8,9 +8,9 @@
 
 #import "LGModalViewController.h"
 
-const CGFloat kDefaultBackgroundBlackAlphaValue = 0.6;
-const CGFloat kDefaultAppearingAnimationsDuration = 0.3;
-const CGFloat kDefaultDisappearingAnimationsDuration = 0.3;
+static const CGFloat kDefaultBackgroundBlackAlphaValue = 0.6;
+static const CGFloat kDefaultAppearingAnimationsDuration = 0.3;
+static const CGFloat kDefaultDisappearingAnimationsDuration = 0.3;
 
 @interface LGModalViewController () <UIGestureRecognizerDelegate>
 
