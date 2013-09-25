@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		419353A717F36B6000BBEDF4 /* LGModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 419353A617F36B6000BBEDF4 /* LGModalViewController.m */; };
 		41CD6EE517F0511500F6B973 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6EE417F0511500F6B973 /* Foundation.framework */; };
 		41CD6EE717F0511500F6B973 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6EE617F0511500F6B973 /* CoreGraphics.framework */; };
 		41CD6EE917F0511500F6B973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6EE817F0511500F6B973 /* UIKit.framework */; };
@@ -21,7 +22,6 @@
 		41CD6F0617F0511500F6B973 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 41CD6EE817F0511500F6B973 /* UIKit.framework */; };
 		41CD6F0E17F0511500F6B973 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 41CD6F0C17F0511500F6B973 /* InfoPlist.strings */; };
 		41CD6F1017F0511500F6B973 /* LGModalViewControllerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CD6F0F17F0511500F6B973 /* LGModalViewControllerDemoTests.m */; };
-		41CD6F6817F0576300F6B973 /* LGModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 41CD6F6717F0576300F6B973 /* LGModalViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +35,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		419353A517F36B6000BBEDF4 /* LGModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGModalViewController.h; path = ../../LGModalViewController/LGModalViewController.h; sourceTree = "<group>"; };
+		419353A617F36B6000BBEDF4 /* LGModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGModalViewController.m; path = ../../LGModalViewController/LGModalViewController.m; sourceTree = "<group>"; };
 		41CD6EE117F0511500F6B973 /* LGModalViewControllerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LGModalViewControllerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		41CD6EE417F0511500F6B973 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		41CD6EE617F0511500F6B973 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -54,8 +56,6 @@
 		41CD6F0B17F0511500F6B973 /* LGModalViewControllerDemoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LGModalViewControllerDemoTests-Info.plist"; sourceTree = "<group>"; };
 		41CD6F0D17F0511500F6B973 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		41CD6F0F17F0511500F6B973 /* LGModalViewControllerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LGModalViewControllerDemoTests.m; sourceTree = "<group>"; };
-		41CD6F6617F0576300F6B973 /* LGModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LGModalViewController.h; path = LGModalViewController/LGModalViewController.h; sourceTree = SOURCE_ROOT; };
-		41CD6F6717F0576300F6B973 /* LGModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LGModalViewController.m; path = LGModalViewController/LGModalViewController.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,8 +159,8 @@
 		41CD6F5A17F051C100F6B973 /* LGModalViewController */ = {
 			isa = PBXGroup;
 			children = (
-				41CD6F6617F0576300F6B973 /* LGModalViewController.h */,
-				41CD6F6717F0576300F6B973 /* LGModalViewController.m */,
+				419353A517F36B6000BBEDF4 /* LGModalViewController.h */,
+				419353A617F36B6000BBEDF4 /* LGModalViewController.m */,
 			);
 			name = LGModalViewController;
 			sourceTree = "<group>";
@@ -213,7 +213,7 @@
 				ORGANIZATIONNAME = "Minh Tu Le";
 				TargetAttributes = {
 					41CD6F0117F0511500F6B973 = {
-						TestTargetID = 41CD6EE017F0511500F6B973;
+						TestTargetID = 41CD6EE017F0511500F6B973 /* LGModalViewControllerDemo */;
 					};
 				};
 			};
@@ -263,7 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				41CD6EFB17F0511500F6B973 /* ViewController.m in Sources */,
-				41CD6F6817F0576300F6B973 /* LGModalViewController.m in Sources */,
+				419353A717F36B6000BBEDF4 /* LGModalViewController.m in Sources */,
 				41CD6EF517F0511500F6B973 /* AppDelegate.m in Sources */,
 				41CD6EF117F0511500F6B973 /* main.m in Sources */,
 			);
