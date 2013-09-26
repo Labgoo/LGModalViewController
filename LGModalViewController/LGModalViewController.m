@@ -14,6 +14,8 @@ static const CGFloat kDefaultDisappearingAnimationsDuration = 0.3;
 
 @interface LGModalViewController () <UIGestureRecognizerDelegate>
 
+@property(nonatomic, strong) UIWindow *keyWindow;
+@property(nonatomic, strong) UIWindow *modalWindow;
 @property(nonatomic, strong) LGModalViewController *retainedSelf;
 @property(nonatomic, strong) UIView *backgroundView;
 @property(nonatomic, strong) UIView *modalView;
@@ -54,13 +56,14 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
     return self;
 }
 
-- (void)viewDidLoad {
-    UIViewController *rootViewController = [UIApplication sharedApplication].keyWindow.rootViewController;
+#pragma mark - UIViewController
 
-    self.view = [[UIView alloc] initWithFrame:rootViewController.view.bounds];
+- (void)viewDidLoad {
+    [super viewDidLoad];
+
+    self.view = [[UIView alloc] initWithFrame:self.modalWindow.bounds];
     self.view.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     self.view.backgroundColor = [UIColor clearColor];
-    [rootViewController.view addSubview:self.view];
 
     self.backgroundView = [[UIView alloc] initWithFrame:self.view.bounds];
     self.backgroundView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
@@ -71,7 +74,7 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
             | UIViewAutoresizingFlexibleRightMargin
             | UIViewAutoresizingFlexibleTopMargin
             | UIViewAutoresizingFlexibleBottomMargin;
-    self.modalView.center = self.view.center;
+    self.modalView.center = self.backgroundView.center;
     [self.view addSubview:self.modalView];
 
     if (self.tapOutsideToCloseEnabled) {
@@ -118,6 +121,11 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
 #pragma mark - Public APIs
 
 - (void)showAnimated:(BOOL)animated {
+    self.keyWindow = [UIApplication sharedApplication].keyWindow;
+    self.modalWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    self.modalWindow.rootViewController = self;
+    [self.modalWindow makeKeyAndVisible];
+    
     // Build the view before showing, calling viewDidLoad if needed
     [self view];
     
@@ -130,12 +138,12 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
         self.appearingAnimations(self);
         [CATransaction commit];
     } else {
-        self.modalView.center = self.view.center;
+        self.modalView.center = self.backgroundView.center;
     }
 }
 
 - (void)dismissAnimated:(BOOL)animated {
-    if (self.view.isHidden) {
+    if (!self.modalWindow) {
         return;
     }
 
@@ -173,6 +181,9 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
     [self.modalView removeFromSuperview];
     [self.backgroundView removeFromSuperview];
     [self.view removeFromSuperview];
+    [self.modalWindow removeFromSuperview];
+    self.modalWindow = nil;
+    [self.keyWindow makeKeyWindow];
     // Break the retaining cycle to release the object.
     self.retainedSelf = nil;
 }
