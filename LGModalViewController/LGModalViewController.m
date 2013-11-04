@@ -126,9 +126,6 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
     self.modalWindow.rootViewController = self;
     [self.modalWindow makeKeyAndVisible];
     
-    // Build the view before showing, calling viewDidLoad if needed
-    [self view];
-    
     if (animated) {
         [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
         [CATransaction begin];
@@ -184,6 +181,7 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
     [self.modalWindow removeFromSuperview];
     self.modalWindow = nil;
     [self.keyWindow makeKeyWindow];
+    self.view = nil;
     // Break the retaining cycle to release the object.
     self.retainedSelf = nil;
 }
