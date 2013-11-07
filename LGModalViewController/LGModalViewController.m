@@ -122,6 +122,7 @@ tapOutsideToCloseEnabled:(BOOL)tapOutsideToCloseEnabled {
 
 - (void)showAnimated:(BOOL)animated {
     self.keyWindow = [UIApplication sharedApplication].keyWindow;
+    [self.keyWindow endEditing:YES];
     self.modalWindow = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.modalWindow.rootViewController = self;
     [self.modalWindow makeKeyAndVisible];
