@@ -16,8 +16,8 @@ typedef void (^LGModalViewControllerAnimations)(LGModalViewController *modalView
 
 @property(nonatomic, strong, readonly) UIView *backgroundView;
 @property(nonatomic, strong, readonly) UIView *modalView;
-@property(nonatomic, strong) LGModalViewControllerAnimations appearingAnimations;
-@property(nonatomic, strong) LGModalViewControllerAnimations disappearingAnimations;
+@property(nonatomic, copy) LGModalViewControllerAnimations appearingAnimations;
+@property(nonatomic, copy) LGModalViewControllerAnimations disappearingAnimations;
 
 - (id)initWithModalView:(UIView *)modalView;
 
